@@ -1,0 +1,26 @@
+{
+  "name": "unifor-poo",
+  "version": "1.0.0",
+  "description": "Unifor POO",
+  "license": "ISC",
+  "author": "Helmut",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "migrate:up": "prisma migrate dev",
+    "migrate:reset": "prisma migrate reset --force",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
+  }
+}
