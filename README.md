@@ -1,6 +1,6 @@
-# Unifor POO API
+# Unifor OOP API
 
-Simple book management API built with `Node.js`, `Express`, and `Prisma`.
+Simple book management API built with `Node.js`, `Express`, and `Prisma`, using Object-Oriented Programming concepts in the book domain.
 
 ## Requirements
 
@@ -14,6 +14,7 @@ Simple book management API built with `Node.js`, `Express`, and `Prisma`.
 - `Express`
 - `Prisma`
 - `PostgreSQL`
+- `OOP`
 
 ## Setup
 
@@ -108,6 +109,35 @@ src/
   lib/
 server.js
 ```
+
+## OOP in this project
+
+This project was designed to practice Object-Oriented Programming in a simple and practical way.
+
+The main class used in the application is the `Book` class, located in:
+
+- [src/modules/books/entities/book.entity.js](/Users/helmut.silva/Desktop/Projects/unifor-poo/src/modules/books/entities/book.entity.js:1)
+
+It represents the book entity and applies OOP concepts such as:
+
+- `Class`: `Book`
+- `Object`: each book instance created from the `Book` class
+- `Attributes`: `title`, `author`, and `quantity`
+- `Methods`: behaviors such as validation, quantity update, and conversion to database format
+
+The rest of the application is organized into controllers, services, repositories, and routes. This keeps the API easier to maintain while still allowing the project to demonstrate OOP in the domain layer.
+
+## Architecture
+
+The project is organized into layers so each part has a clear responsibility:
+
+- `Routes`: define the available API endpoints
+- `Controllers`: receive HTTP requests and return HTTP responses
+- `Services`: contain the business rules of the application
+- `Repositories`: communicate with the database through Prisma
+- `Entities`: represent the domain objects, such as the `Book` class
+
+This structure makes the code easier to read, maintain, and extend. It also helps separate technical concerns from domain logic, which is useful both for real projects and for understanding how OOP can organize software.
 
 ## Endpoints
 
