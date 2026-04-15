@@ -1,99 +1,99 @@
 # Unifor POO API
 
-API simples para gerenciamento de livros, desenvolvida com `Node.js`, `Express` e `Prisma`.
+Simple book management API built with `Node.js`, `Express`, and `Prisma`.
 
-## Requisitos
+## Requirements
 
-- `Node.js` 18+ 
+- `Node.js` 18+
 - `npm`
-- `PostgreSQL` rodando localmente
+- Local `PostgreSQL` server
 
-## Tecnologias
+## Technologies
 
 - `Node.js`
 - `Express`
 - `Prisma`
 - `PostgreSQL`
 
-## Configuracao
+## Setup
 
-1. Clone o projeto.
-2. Instale as dependencias:
+1. Clone the project.
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Crie o arquivo `.env` com base no `.env.example`:
+3. Create your `.env` file based on `.env.example`:
 
 ```bash
 cp .env.example .env
 ```
 
-4. Ajuste a conexao com o PostgreSQL no `.env`:
+4. Update the PostgreSQL connection in `.env`:
 
 ```env
 SERVER_PORT=3000
-DATABASE_URL="postgresql://seu_usuario:sua_senha@localhost:5432/unifor_poo?schema=public"
+DATABASE_URL="postgresql://your_user:your_password@localhost:5432/unifor_poo?schema=public"
 ```
 
-## Preparando o banco
+## Database setup
 
-Se o banco ainda nao existir, crie um usuario e um banco no PostgreSQL.
+If the database does not exist yet, create a PostgreSQL user and database.
 
-Exemplo no terminal:
+Example:
 
 ```bash
 sudo -u postgres psql
 ```
 
-Depois, no `psql`:
+Then run:
 
 ```sql
-CREATE ROLE "seu_usuario" WITH LOGIN PASSWORD 'sua_senha';
-CREATE DATABASE unifor_poo OWNER "seu_usuario";
-GRANT ALL PRIVILEGES ON DATABASE unifor_poo TO "seu_usuario";
+CREATE ROLE "your_user" WITH LOGIN PASSWORD 'your_password';
+CREATE DATABASE unifor_poo OWNER "your_user";
+GRANT ALL PRIVILEGES ON DATABASE unifor_poo TO "your_user";
 \q
 ```
 
-## Executando o projeto
+## Running the project
 
-Modo desenvolvimento:
+Development mode:
 
 ```bash
 npm run dev
 ```
 
-Modo normal:
+Production mode:
 
 ```bash
 npm start
 ```
 
-Observacao:
-- os scripts `start` e `dev` executam `prisma migrate deploy` antes de subir a API
+Note:
+- both `start` and `dev` run `prisma migrate deploy` before starting the API
 
 ## Migrations
 
-Aplicar migrations manualmente:
+Apply migrations manually:
 
 ```bash
 npm run migrate:deploy
 ```
 
-Criar uma nova migration em desenvolvimento:
+Create a new migration during development:
 
 ```bash
 npm run migrate:up
 ```
 
-Resetar o banco local:
+Reset the local database:
 
 ```bash
 npm run migrate:reset
 ```
 
-## Estrutura do projeto
+## Project structure
 
 ```text
 src/
@@ -113,11 +113,11 @@ server.js
 
 ### `GET /`
 
-Retorna o status basico da API.
+Returns the API status.
 
 ### `POST /books`
 
-Cria um livro.
+Creates a new book.
 
 Body:
 
@@ -131,31 +131,31 @@ Body:
 
 ### `GET /books`
 
-Lista todos os livros.
+Returns all books.
 
 ### `GET /books/title/:title`
 
-Busca livros por titulo.
+Search books by title.
 
-Exemplo:
+Example:
 
-```bash
+```text
 GET /books/title/Clean Code
 ```
 
 ### `GET /books/author/:author`
 
-Busca livros por autor.
+Search books by author.
 
-Exemplo:
+Example:
 
-```bash
+```text
 GET /books/author/Robert C. Martin
 ```
 
 ### `PATCH /books/:id/quantity`
 
-Atualiza a quantidade de um livro.
+Updates the quantity of a book.
 
 Body:
 
@@ -167,17 +167,17 @@ Body:
 
 ### `DELETE /books/title/:title`
 
-Remove livros pelo titulo.
+Removes books by title.
 
-## Testando com Postman
+## Testing with Postman
 
-Base URL local:
+Local base URL:
 
 ```text
 http://localhost:3000
 ```
 
-Fluxo sugerido:
+Suggested flow:
 
 1. `POST /books`
 2. `GET /books`
@@ -185,11 +185,11 @@ Fluxo sugerido:
 4. `PATCH /books/:id/quantity`
 5. `DELETE /books/title/:title`
 
-## Observacoes
+## Notes
 
-- o projeto usa Prisma com PostgreSQL
-- o titulo do livro esta definido como unico no banco
-- se uma migration falhar no ambiente local, pode ser necessario rodar:
+- the project uses Prisma with PostgreSQL
+- the book title is unique in the database
+- if a migration fails in your local environment, you may need to run:
 
 ```bash
 npm run migrate:reset
