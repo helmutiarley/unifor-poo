@@ -139,6 +139,20 @@ The project is organized into layers so each part has a clear responsibility:
 
 This structure makes the code easier to read, maintain, and extend. It also helps separate technical concerns from domain logic, which is useful both for real projects and for understanding how OOP can organize software.
 
+## Project scope
+
+This project was created to validate and demonstrate Object-Oriented Programming concepts in a simple academic context.
+
+Because of that, some concerns that are common in production systems were intentionally not a priority here, such as:
+
+- advanced security mechanisms
+- complete input validation
+- authentication and authorization
+- more complex architectural layers
+- production hardening and scalability concerns
+
+The goal of the project is to keep the code focused on the OOP concepts required by the assignment, especially the use of classes, objects, attributes, methods, and separation of responsibilities.
+
 ## Endpoints
 
 ### `GET /`
