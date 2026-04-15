@@ -2,6 +2,47 @@
 
 Simple book management API built with `Node.js`, `Express`, and `Prisma`, using Object-Oriented Programming concepts in the book domain.
 
+## Assignment context
+
+This project was developed for the `N685 Object-Oriented Programming` virtual environment activity.
+
+### Big Idea
+
+Object-Oriented Programming makes it possible to create organized, modular, and reusable systems.
+
+### Essential Question
+
+How does Object-Oriented Programming help solve real-world problems?
+
+### Challenge
+
+Create a basic system to manage books in a local library.
+
+The system should allow:
+
+- adding books with `title`, `author`, and `quantity`
+- listing available books
+- searching books by title
+
+Additional expansion tasks:
+
+- removing books by title
+- updating the quantity of a specific book
+- searching books by author
+
+## How this project addresses the assignment
+
+This API was designed as a practical OOP solution for the library challenge.
+
+It demonstrates the requested concepts through the `Book` domain:
+
+- `Class`: the `Book` class represents the book model
+- `Object`: each created book is an instance of the `Book` class
+- `Attributes`: `title`, `author`, and `quantity`
+- `Methods`: validation, quantity update, and formatting data before persistence
+
+The project also shows how multiple books can be managed through an application structure that includes routes, controllers, services, repositories, and persistence with PostgreSQL.
+
 ## Requirements
 
 - `Node.js` 18+
@@ -127,6 +168,48 @@ It represents the book entity and applies OOP concepts such as:
 
 The rest of the application is organized into controllers, services, repositories, and routes. This keeps the API easier to maintain while still allowing the project to demonstrate OOP in the domain layer.
 
+## Investigate, Plan, and Act
+
+This project follows the same logic proposed in the assignment:
+
+### Investigate
+
+The solution starts from the core OOP concepts:
+
+- a class represents the `Book`
+- objects represent individual books
+- attributes describe the state of each book
+- methods define the book behaviors
+
+### Plan
+
+Before implementation, the system can be modeled around one main class:
+
+- `Book`
+
+Main attributes:
+
+- `title`
+- `author`
+- `quantity`
+
+Main responsibilities:
+
+- validate book data
+- represent the book as a domain object
+- support quantity updates
+
+### Act
+
+The implementation transforms that plan into an API that allows:
+
+- creating books
+- listing books
+- searching by title
+- searching by author
+- updating quantity
+- removing by title
+
 ## Architecture
 
 The project is organized into layers so each part has a clear responsibility:
@@ -152,6 +235,14 @@ Because of that, some concerns that are common in production systems were intent
 - production hardening and scalability concerns
 
 The goal of the project is to keep the code focused on the OOP concepts required by the assignment, especially the use of classes, objects, attributes, methods, and separation of responsibilities.
+
+## Reflection
+
+This project helps answer the reflection points proposed in the activity:
+
+1. It reinforces how classes and objects can model real entities such as books.
+2. It shows that one of the main implementation challenges is separating responsibilities clearly across the codebase.
+3. It suggests possible improvements such as stronger validation, authentication, better search options, and production-oriented security.
 
 ## Endpoints
 
