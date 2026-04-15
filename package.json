@@ -8,10 +8,10 @@
   "main": "server.js",
   "scripts": {
     "start": "npm run migrate:deploy && node server.js",
-    "dev": "npm run migrate:deploy && node scripts/run-with-db-url.js nodemon server.js",
-    "migrate:deploy": "node scripts/run-with-db-url.js prisma migrate deploy",
-    "migrate:up": "node scripts/run-with-db-url.js prisma migrate dev",
-    "migrate:reset": "node scripts/run-with-db-url.js prisma migrate reset --force",
+    "dev": "npm run migrate:deploy && nodemon server.js",
+    "migrate:deploy": "prisma migrate deploy",
+    "migrate:up": "prisma migrate dev",
+    "migrate:reset": "prisma migrate reset --force",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
