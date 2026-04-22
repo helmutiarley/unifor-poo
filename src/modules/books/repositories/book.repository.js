@@ -19,7 +19,6 @@ export function findBooksByTitle(title) {
     where: {
       title: {
         contains: title,
-        mode: 'insensitive',
       },
     },
     orderBy: {
@@ -33,7 +32,6 @@ export function findBooksByAuthor(author) {
     where: {
       author: {
         contains: author,
-        mode: 'insensitive',
       },
     },
     orderBy: {
@@ -60,7 +58,6 @@ export function findBooksByExactTitle(title) {
     where: {
       title: {
         equals: title,
-        mode: 'insensitive',
       },
     },
     select: {
